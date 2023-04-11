@@ -1,14 +1,14 @@
 #!/usr/bin/env node 
 
 import minimist from 'minimist';
+import express from "express"
 
-
-import { rps,rpsls } from "../lib/rpsls.js";
+import { rps,rpsls } from "./lib/rpsls.js";
 
 
 const args = minimist(process.argv.slice(2));
-import express from "express"
-const express = require('express');
+
+app.use(express.json());
 const app = express();
 
 const PORT = process.env.PORT || 5000;
