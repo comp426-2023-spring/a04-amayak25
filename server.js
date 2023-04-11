@@ -12,8 +12,7 @@ const args = minimist(process.argv.slice(2));
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const PORT = process.env.PORT || 5000;
+const port = argv["port"]  || 5000;
 
 // Default API endpoint
 app.use((req, res) => {
@@ -52,11 +51,9 @@ app.get('/app/rpsls/play/:shot', (req, res) => {
 res.status(200).send(JSON.stringify(rpsls(shot)))
 });
 
-app.use((req, res) => {
-  res.status(404).send('404 NOT FOUND');
-});
+
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${port}`);
 });
 
