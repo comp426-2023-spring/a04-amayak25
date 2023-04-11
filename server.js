@@ -8,10 +8,8 @@ import { rps,rpsls } from "./lib/rpsls.js";
 
 const args = minimist(process.argv.slice(2));
 
-
-const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const app = express();
 
 const PORT = process.env.PORT || 5000;
 
@@ -43,9 +41,13 @@ app.get('/app/rpsls/play/', (req, res) => {
 res.status(200).send(JSON.stringify(rpsls(shot)))
 });
 
-app.get('/app/rpsls/play/:shot', (req, res) => {
+app.get('/app/rps/play/:shot', (req, res) => {
    const { shot } = req.params;
 res.status(200).send(JSON.stringify(rps(shot)))
+});
+app.get('/app/rpsls/play/:shot', (req, res) => {
+  const { shot } = req.params;
+res.status(200).send(JSON.stringify(rpsls(shot)))
 });
 
 app.use((req, res) => {
