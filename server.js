@@ -29,26 +29,26 @@ app.get('/app/rps/', (req, res) => {
 });
 
 app.get('/app/rpsls/', (req, res) => {
-  res.status(200).send(JSON.stringify(rps()))
+  res.status(200).send(JSON.stringify(rpsls()))
 });
 
 app.get('/app/rps/play/', (req, res) => {
-  const { shot } = req.query;
-res.status(200).send(JSON.stringify(rps(shot)))
+
+res.status(200).send(JSON.stringify(rps(req.query.shot)))
 });
 
 app.get('/app/rpsls/play/', (req, res) => {
-  const { shot } = req.query;
-res.status(200).send(JSON.stringify(rpsls(shot)))
+ 
+res.status(200).send(JSON.stringify(rpsls(req.query.shot)))
 });
 
 app.get('/app/rps/play/:shot', (req, res) => {
-   const { shot } = req.params;
-res.status(200).send(JSON.stringify(rps(shot)))
+   
+res.status(200).send(JSON.stringify(rps(req.params.shot)))
 });
 app.get('/app/rpsls/play/:shot', (req, res) => {
-  const { shot } = req.params;
-res.status(200).send(JSON.stringify(rpsls(shot)))
+
+res.status(200).send(JSON.stringify(rpsls(req.params.shot))
 });
 
 
