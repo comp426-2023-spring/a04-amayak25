@@ -8,8 +8,9 @@ import { rps,rpsls } from "./lib/rpsls.js";
 
 const args = minimist(process.argv.slice(2));
 
-app.use(express.json());
+
 const app = express();
+app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
