@@ -56,12 +56,13 @@ app.post('/app/rpsls/play/', (req, res) => {
  
 res.status(200).send(JSON.stringify(rpsls(req.body.shot)));
 });
-/*
+
 // Default API endpoint
-app.use((req, res) => {
+//geeks for geeks
+app.use('*',(req, res) => {
   res.status(404).send('404 NOT FOUND');
 });
-*/
+
 
 
 app.listen(port, () => {
