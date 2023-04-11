@@ -12,7 +12,7 @@ const args = minimist(process.argv.slice(2));
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const port = args["port"]  || 5000;
+const PORT = args["PORT"]  || 5000;
 
 // Default API endpoint
 app.use((req, res) => {
@@ -54,6 +54,6 @@ res.status(200).send(JSON.stringify(rpsls(shot)))
 
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running on port ${PORT}`);
 });
 
